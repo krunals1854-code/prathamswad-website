@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #18110d;
+  --surface: #211712;
+  --surface-muted: #2a1d16;
+
+  --foreground: #f6efe1;
+  --foreground-muted: #b9a99a;
+
+  --primary: #d13a23;
+  --primary-hover: #f05a3f;
+
+  --accent: #e2a52c;
+  --secondary: #c73800;
+  --olive: #6d7650;
+
+  --border: rgba(246, 239, 225, 0.1);
+  --border-strong: rgba(246, 239, 225, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--accent);
+  color: #18110d;
+}
+.product-marquee {
+  animation: product-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.product-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes product-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+.partner-marquee {
+  animation: partner-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.partner-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes partner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
